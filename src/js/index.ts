@@ -4,18 +4,17 @@ new Vue({
     // which is included at the bottom of the html file.
     el: "#app",
     data: {
-        name: "",
-        greeting: ""
+        tekst: "",
+        morsekode: "",
+        morseToTekst: false
+        
     },
     methods: {
-        sayHello() {
-            console.log("Say Hello " + this.name)
-            if (this.name == "") {
-                this.greeting = "Hello NoName"
-            }
-            else {
-                this.greeting = "Hello " + this.name
-            }
+        oversætTekst() {
+            this.morseToTekst = true
+        },
+        oversætMorse(){
+            this.morseToTekst = false
         }
     }
 })

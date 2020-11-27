@@ -12,16 +12,27 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-  <title>Hello app</title>
+  <title>Morsekode oversæt</title>
 </head>
 
 <body>
-  <h1>Hello</h1>
+  <h1>Morsekode</h1>
   <div id="app">
-    <input v-model="name" placeholder="Name">
-    <button v-on:click="sayHello()" class="btn btn-primary">Say hello</button>
-    <div>{{ greeting }}</div>
+    <div v-if="morseToTekst">
+      <input v-model="morsekode" placeholder="Morsekode">
+      <button class="btn btn-primary">Oversæt</button>
+      <input v-model="tekst" placeholder="Tekst">
+      <button v-on:click="oversætTekst" class="btn btn-primary">OversætTekst</button>
+    </div>
+    <div v-else>
+      <input v-model="tekst" placeholder="Tekst">
+      <button class="btn btn-primary">Oversæt</button>
+      <input v-model="morsekode" placeholder="Morsekode">
+      <button v-on:click="oversætTekst" class="btn btn-primary">OversætMorse</button>
+    </div>
+
   </div>
+
 
   <script src="bundle.js"></script>
 </body>
