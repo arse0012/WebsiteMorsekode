@@ -15,24 +15,31 @@
   <title>Morsekode oversæt</title>
 </head>
 
+<style>
+  body {
+    background-color: aquamarine;
+  }
+</style>
+
 <body>
   <h1>Morsekode</h1>
   <div id="app">
-    <div v-if="morseToTekst">
+    <select v-model="oversættelse">
+      <option value="oversætTekst">OversætTekst</option>
+      <option value="oversætMorse">OversætMorse</option>
+    </select>
+    <div v-if="tekstFraMorse">
       <input v-model="morsekode" placeholder="Morsekode">
       <button class="btn btn-primary">Oversæt</button>
-      <input v-model="tekst" placeholder="Tekst">
-      <button v-on:click="oversætTekst" class="btn btn-primary">OversætTekst</button>
+      <div>{{ result }}</div>
     </div>
     <div v-else>
       <input v-model="tekst" placeholder="Tekst">
       <button class="btn btn-primary">Oversæt</button>
-      <input v-model="morsekode" placeholder="Morsekode">
-      <button v-on:click="oversætTekst" class="btn btn-primary">OversætMorse</button>
+      <div>{{ result }}</div>
     </div>
 
   </div>
-
 
   <script src="bundle.js"></script>
 </body>

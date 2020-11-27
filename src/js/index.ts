@@ -5,16 +5,21 @@ new Vue({
     el: "#app",
     data: {
         tekst: "",
+        tekstFraMorse: "",
         morsekode: "",
-        morseToTekst: false
-        
+        morseFraTekst: "",
+        oversættelse: "",
+        result: ""
+
     },
     methods: {
-        oversætTekst() {
-            this.morseToTekst = true
-        },
-        oversætMorse(){
-            this.morseToTekst = false
+        oversætForm() {
+            if (this.oversættelse == "OversætTekst") {
+                this.tekstFraMorse = true
+            }
+            else if (this.oversættelse == "OversætMorse") {
+                this.tekstFraMorse == false
+            }
         }
     }
 })
