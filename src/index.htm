@@ -15,10 +15,13 @@
   <title>Morsekode oversæt</title>
   <style>
     body {
-      background-image : url("https://f.nordiskemedier.dk/2laz50dkv8flcfab_660_439.jpg");
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/International_Morse_Code.svg/630px-International_Morse_Code.svg.png"),
+        url("https://f.nordiskemedier.dk/2laz50dkv8flcfab_660_439.jpg");
       background-repeat: no-repeat;
-      background-size: 100% 100%;
+      background-position: center bottom;
       background-attachment: fixed;
+      background-size: 20%, 100% 800px;
+
     }
   </style>
 </head>
@@ -26,17 +29,20 @@
 
 
 <body>
-  <h1>Morsekode</h1>
-  <div id="app" style="display: block;">
-    <div>
-      <input type="radio" name="oversættelse" checked>
-      <label style="padding-right: 30px;"><span></span>Tekst til Morse</label>
-      <input type="radio" name="oversættelse">
-      <label style="padding-right: 30px;"><span></span>Morse til Tekst</label></label>
+  <div style="text-align: center;">
+    <h1>Morsekode</h1>
+    <div id="app">
+      <div>
+        <input type="radio" name="oversættelse" checked>
+        <label style="padding-right: 30px;"><span></span>Tekst til Morse</label>
+        <input type="radio" name="oversættelse">
+        <label style="padding-right: 30px;"><span></span>Morse til Tekst</label></label>
+      </div>
+      <textarea placeholder="indsæt Tekst"></textarea>
+      <textarea>{{result}}</textarea>
+      <br>
+      <input type="submit" name="translate" value="Oversæt" class=button>
     </div>
-    <textarea placeholder="indsæt Tekst"></textarea>
-    <br>
-    <input type="submit" name="translate" value="Oversæt" class=button>
   </div>
 
   </div>
