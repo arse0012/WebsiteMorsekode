@@ -18,9 +18,9 @@
       background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/International_Morse_Code.svg/630px-International_Morse_Code.svg.png"),
         url("https://f.nordiskemedier.dk/2laz50dkv8flcfab_660_439.jpg");
       background-repeat: no-repeat;
-      background-position: center bottom;
+      background-position: left top;
       background-attachment: fixed;
-      background-size: 20%, 100% 950px;
+      background-size: 25%, 100% 800px;
 
     }
   </style>
@@ -30,22 +30,22 @@
 
 <body>
   <div style="text-align: center;">
-    <h1>Morsekode</h1>
+    <h1>Morsekode læring</h1>
     <div id="app">
       <div>
         <input type="radio" name="oversættelse" checked>
         <label style="padding-right: 30px;"><span></span>Tekst til Morse</label>
         <input type="radio" name="oversættelse">
-        <label style="padding-right: 30px;"><span></span>Morse til Tekst</label></label>
+        <label style="padding-right: 30px;"><span></span>Morse til Tekst</label>
       </div>
-      <textarea placeholder="indsæt Tekst" rows="4" cols="50"></textarea>
+      <textarea placeholder="Indsæt tekst" rows="4" cols="50"></textarea>
       <textarea rows="4" cols="50">{{result}}</textarea>
       <br>
       <input type="submit" name="translate" value="Oversæt" class=button>
     </div>
   </div>
 
-  </div>
+
 
   <script src="bundle.js"></script>
 </body>
