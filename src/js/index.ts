@@ -1,18 +1,57 @@
+import axios, {
+    AxiosResponse,
+    AxiosError
+} from "../../node_modules/axios/index"
+
+
+
 new Vue({
-    // TypeScript compiler complains about Vue because the CDN link to Vue is in the html file.
-    // Before the application runs this TypeScript file will be compiled into bundle.js
-    // which is included at the bottom of the html file.
     el: "#app",
     data: {
-        kode: "",
-        tekstFraMorse: "",
-        morseFraTekst: "",
-        oversættelse: "",
-        result: ""
-
+        input_string: "h",
+        output_string: "",
+        baseMorseInputURL: "http://localhost:56910/api/Morsestrings"
     },
-    methods: {
+
+    methods:{
         
+            getTranslatedInput(){
+
+                axios.get(this.baseMorseInputURL)
+                .then((response: AxiosResponse<string>) => {
+                    this.output_string = response.data
+                })
+                .catch((error: AxiosError) => {
+                    alert(error.message) 
+                })
+
+
+            },
+            
+
+            translateInput(){
+                let input_string = (document.getElementById("Input") as HTMLInputElement).value
+                let baseMorseInputURL: string = this.baseMorseInputURL + "/" + input_string
+                
+                axios.get(baseMorseInputURL)
+                .then((response: AxiosResponse<string>) => {
+                    this.output_string = response.data
+                })
+                .catch((error: AxiosError) =>{
+                    alert(error.message)
+                })
+
+                
+            },
+
+           
+
+            clearOutAndInput(){
+                this.input_string = "",
+                this.output_string =  ""
+            }
+
     }
-        
+
+
 })
