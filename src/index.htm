@@ -41,7 +41,8 @@
       <textarea placeholder="Indsæt tekst" rows="4" cols="50"></textarea>
       <textarea rows="4" cols="50">{{output_string}}</textarea>
       <br>
-      <input type="submit" name="translate" value="Oversæt" class=button>
+      <button v-on:click="translateInput()" class="btn btn-success">Oversæt</button>
+      <button v-on:click="clearOutAndInput()" class="btn btn-success">Clear oversat tekst</button>
     </div>
   </div>
 
