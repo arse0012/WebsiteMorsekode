@@ -29,7 +29,6 @@ new Vue({
 
             },
             
-
             translateInput(){
                 let input_string = (document.getElementById("Input") as HTMLInputElement).value
                 let baseMorseInputURL: string = this.baseMorseInputURL + "/" + input_string
@@ -44,8 +43,6 @@ new Vue({
 
                 
             },
-
-           
 
             clearOutAndInput(){
                 this.input_string = "",
