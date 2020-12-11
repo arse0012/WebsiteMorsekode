@@ -8,8 +8,9 @@ import axios, {
 new Vue({
     el: "#app",
     data: {
-        input_string: "h",
+        input_string: "",
         output_string: "",
+        //der bruges localhost da rest-servicen ikk er på azure
         baseMorseInputURL: "http://localhost:56910/api/Morsestrings"
     },
 
